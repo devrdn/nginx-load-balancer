@@ -2,23 +2,22 @@
 
 Simple Nginx based container cluster
 
-# Build Containers
-
+## Build Containers
 ```bash
 make build
 ```
 
-# Start Containers
+## Start Containers
 ```bash
 make up
 ```
 
-# Stop and remove containers, networks
+## Stop and remove containers, networks
 ```bash
 make rm
 ```
 
-# Rebuild containers
+## Rebuild containers
 ```bash
 make rebuild
 ```
