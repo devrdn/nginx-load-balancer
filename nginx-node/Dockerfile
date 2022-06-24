@@ -6,11 +6,14 @@ RUN apt update && apt upgrade -y
 
 RUN apt install -y mc nginx php${PHP_VERSION}-fpm
 
-# Directory with PHP filencd va
+# Directory with PHP file
 COPY ./site/ /var/www/html
 
-# Nginx conf
+# Main nginx conf
 COPY conf/nginx.conf /etc/nginx/nginx.conf
+
+# Virtual Host Server nginx conf
+COPY conf/server.conf /etc/nginx/conf.d/server.conf
 
 # PHP-FPM conf
 COPY conf/www.conf /etc/php/${PHP_VERSION}/fpm/pool.d/www.conf
