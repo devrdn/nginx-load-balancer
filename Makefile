@@ -10,4 +10,4 @@ rm:
 stop:
 	docker-compose stop
 
-rebuild: build up
+rebuild: stop build up
