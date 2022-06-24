@@ -10,25 +10,7 @@ services:
       - backend
       - frontend
 
-  nginx-node-1:
-    build: ./nginx-node/
-    volumes:
-      - ./nginx-node/site/:/var/www/html
-    depends_on:
-      - nginx-balancer
-    networks: 
-      - backend
-
-  nginx-node-2:
-    build: ./nginx-node/
-    volumes:
-      - ./nginx-node/site/:/var/www/html
-    depends_on:
-      - nginx-balancer
-    networks: 
-      - backend
-
-  nginx-node-3:
+  nginx-node:
     build: ./nginx-node/
     volumes:
       - ./nginx-node/site/:/var/www/html
