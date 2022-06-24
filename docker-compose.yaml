@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   nginx-balancer:
-    build: ./balancer/
+    build: ./nginx-balancer/
     ports:
       - "8080:80"
     networks: 
@@ -11,27 +11,27 @@ services:
       - frontend
 
   nginx-node-1:
-    build: ./node/
+    build: ./nginx-node/
     volumes:
-      - ./site/:/var/www/html
+      - ./nginx-node/site/:/var/www/html
     depends_on:
       - nginx-balancer
     networks: 
       - backend
 
   nginx-node-2:
-    build: ./node/
+    build: ./nginx-node/
     volumes:
-      - ./site/:/var/www/html
+      - ./nginx-node/site/:/var/www/html
     depends_on:
       - nginx-balancer
     networks: 
       - backend
 
   nginx-node-3:
-    build: ./node/
+    build: ./nginx-node/
     volumes:
-      - ./site/:/var/www/html
+      - ./nginx-node/site/:/var/www/html
     depends_on:
       - nginx-balancer
     networks: 
