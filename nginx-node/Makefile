@@ -17,4 +17,4 @@ remove:
 rebuild: down remove build
 
 bash:
-	docker exec -it ${APP_NAME}-1 bash
+	docker exec -it ${APP_NAME}-1 bash 
