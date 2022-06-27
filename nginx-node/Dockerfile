@@ -2,8 +2,10 @@ FROM debian:10.12
 
 ARG PHP_VERSION=7.3
 
+# Update packets
 RUN apt update && apt upgrade -y
 
+# Install nginx and PHP-FPM
 RUN apt install -y mc nginx php${PHP_VERSION}-fpm
 
 # Directory with PHP file
